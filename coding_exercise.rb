@@ -8,6 +8,7 @@ def get_address_string(address)
   # Possibly not necessary to test for this value
   town_or_city = address["town_or_city"] == nil ? "" : "#{address['town_or_city']},"
   region = address["region"] == nil ? "" : "#{address['region']},"
+  postcode = "#{address['postcode']}"
 
   # Construct address string
   address = ""
@@ -30,6 +31,6 @@ def get_address_string(address)
     address += region + "\n"
   end
 
-  address += "#{address['postcode']}" + "\n\n"
+  address += postcode + "\n\n"
 
 end
